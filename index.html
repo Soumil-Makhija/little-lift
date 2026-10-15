@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ee">
+  <meta name="description" content="Take a little break. Discover random jokes, reveal the punchline, and save your favorites with Little Lift.">
+  <title>Little Lift — a little break, a good laugh.</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./src/style.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="./" aria-label="Little Lift home"><span class="brand-mark" aria-hidden="true">☺</span> little lift<span class="brand-dot">.</span></a>
+    <a class="saved-link" href="#collection"><span aria-hidden="true">♡</span> Your collection <span id="saved-count" class="count">0</span></a>
+  </header>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="intro">
+        <p class="eyebrow"><span class="small-star" aria-hidden="true">✳</span> A SMALL DOSE OF GOOD MOOD</p>
+        <h1 id="hero-title">Life’s serious.<br>Take a <span class="serif">little lift.</span></h1>
+        <p class="intro-copy">A fresh joke. A tiny pause. A reason to smile.<br>Your next good laugh is just a click away.</p>
+        <div class="doodle" aria-hidden="true"><svg viewBox="0 0 220 170" fill="none"><path d="M75 25C42 37 31 83 48 115s68 39 94 15 29-70 7-95S101 16 75 25Z" fill="#eed778" stroke="#242b25" stroke-width="2.5"/><path d="m72 67 1 12m38-16 1 12M72 94c13 19 33 18 45-4M164 31l13-13m-8 35 23-3M40 20l-7-12M25 49l-18-4" stroke="#242b25" stroke-width="3.5" stroke-linecap="round"/><path d="M154 143c26 5 35-5 37-18m0 0-9 7m9-7 3 12" stroke="#626b5e" stroke-width="2" stroke-linecap="round"/></svg><span>less scrolling,<br>more smiling.</span></div>
+      </div>
+      <div class="generator">
+        <fieldset class="filters" id="filters"><legend class="sr-only">Choose a joke category</legend>
+          <label><input type="radio" name="category" value="all" checked><span>Surprise me</span></label>
+          <label><input type="radio" name="category" value="general"><span>Everyday</span></label>
+          <label><input type="radio" name="category" value="programming"><span>Programming</span></label>
+        </fieldset>
+        <article class="joke-card" id="joke-card" aria-busy="true">
+          <div class="card-top"><span class="eyebrow" id="joke-type">ON THE LIGHTER SIDE</span><span class="card-spark" aria-hidden="true">✳</span></div>
+          <div class="joke-content" aria-live="polite" aria-atomic="true"><p id="setup" class="setup">Finding your next laugh…</p><p id="punchline" class="punchline" hidden></p></div>
+          <button class="reveal" id="reveal" disabled>Reveal punchline <span aria-hidden="true">↗</span></button>
+          <div class="card-bottom"><span class="card-note" id="card-note">A little suspense is part of the fun.</span><div class="card-tools"><button class="icon-button" id="save" aria-label="Save joke" aria-pressed="false" disabled>♡</button><button class="icon-button" id="copy" aria-label="Copy joke" disabled>⧉</button><button class="icon-button" id="share" aria-label="Share joke" disabled>↗</button></div></div>
+        </article>
+        <p id="error" class="error" role="alert" hidden></p>
+        <button class="next-button" id="next" disabled><span id="next-label">Finding a joke…</span><span class="next-arrow" aria-hidden="true">→</span></button>
+        <p class="under-button">Fresh from the internet. Served with a smile.</p>
+      </div>
+    </section>
+    <section id="collection" class="collection" aria-labelledby="collection-title">
+      <div class="section-heading"><div><p class="eyebrow">THE KEEPERS</p><h2 id="collection-title">Your pocketful of laughs<span>.</span></h2></div><p>Good ones deserve a second laugh.</p></div>
+      <div id="saved-list" class="saved-grid"></div>
+      <div id="empty-state" class="empty-state"><span class="empty-heart" aria-hidden="true">♡</span><div><h3>Found a keeper?</h3><p>Reveal a punchline, then tap the heart to save it here.<br>Your favorites stay in this browser.</p></div></div>
+    </section>
+  </main>
+  <footer class="site-footer wrap"><span>A little lighter than you arrived.</span><span>Jokes by <a href="https://github.com/15Dkatz/official_joke_api" target="_blank" rel="noreferrer">Official Joke API <span aria-hidden="true">↗</span></a></span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "little-lift",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A little break for a good laugh. A responsive random joke generator.",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/core.test.mjs",
+    "test:e2e": "playwright test"
+  },
+  "engines": { "node": ">=22" },
+  "devDependencies": { "@playwright/test": "^1.56.0" }
+}
